@@ -24,20 +24,46 @@
 
         <div class="row" id="customPads">
 
-            <div class="col-xs-12 col-sm-12 col-md-12" id="contentBox">
-                <h1 class="text-center">Trivia (Theme?)</h1>
-                <h3 class="text-center">What is the question here and how does it scale?</h3>
-                <h4 class="text-center">Choice 1</h4>
-                <h4 class="text-center">Choice 2</h4>
-                <h4 class="text-center">Choice 3</h4>
-                <h4 class="text-center">Choice 4</h4>
-            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 img-rounded" id="contentBox">
+              <h1 class="text-center">Simpsons Trivia</h1>
 
-            <div class="col-xs-12 col-sm-12 col-md-12" id="contentBox">
-                <h3 class="text-center">Time: 30 seconds</h3>
+              <div class="row">
+
+                <button class="btn btn-lg btn-default center-block" id="startBtn">
+                Start It!</button>
+
+                <div class="col-xs-12 col-sm-12 col-md-6" id="question">
+                <!-- Question will dynamically show up here from JS. -->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                  <div class="row" id="answers">
+
+                    <div class="col-xs-6 col-sm-6 col-md-6" id="answersLeft">
+                    <!-- 2 answers will dynamically show up here from JS. -->
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-6" id="answersRight">
+                    <!-- 2 answers will dynamically show up here from JS. -->
+                    </div>
+
+                  </div>
+                  <!-- End of answers div -->
+                </div>
+                <!-- End of nested div for responsive display of answers -->
+
+              </div>
+              <!-- End of nested row div -->
+              
+              <div class="col-xs-12 col-sm-12 col-md-12" id="contentBox">
+                  <h3 class="text-center" id="counter">Time: 30 seconds</h3>
+              </div>
+
             </div>
+            <!-- End of contentBox div -->
 
         <div>
+        <!-- End of the top level row div -->
 
     </div>
     <!-- Container div end -->
