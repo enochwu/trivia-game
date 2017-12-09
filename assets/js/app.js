@@ -47,9 +47,6 @@ $(document).ready(function() {
       q4.a3
     ];
 
-    var countdownRun = false;
-
-    var timer = 30;
     var rightCount = 0;
     var wrongCount = 0;
     var unAnsweredCount = 0;
@@ -100,7 +97,55 @@ $(document).ready(function() {
         }
         // End of loop for creating answers
 
+        var time = 30;
+        var intervalId;
+        var converted = 0;
 
+        // function reset() {
+        //
+        //   time = 0;
+        //   lap = 1;
+        //
+        //   $("#display").text("00:00");
+        //   $("#laps").text("");
+        //
+        // }
+
+        function start() {
+          intervalId = setInterval(count, 1000);
+        }
+
+        function stop() {
+
+          console.log("stopping");
+          clearInterval(intervalId);
+
+        }
+
+        function count() {
+
+          time--;
+          converted = timeConverter(time);
+          countdown = $('<h2 />');
+          countdown.attr('class', 'text-center');
+          countdown.text("Time: "+converted+" seconds");
+          $('#timeLeft').html(countdown);
+
+        }
+
+        function timeConverter(t) {
+
+          var minutes = Math.floor(t / 60);
+          var seconds = t - (minutes * 60);
+
+          if (seconds < 10) {
+            seconds = "0" + seconds;
+          }
+
+          return seconds;
+        }
+
+        start();
 
         function correctAns() {
 
@@ -116,21 +161,29 @@ $(document).ready(function() {
 
         $(document).on("click", "#ansBtn", function() {
           //Pulls answer from selected button and stores it
+
           var selectedAns = $(this).data('ans');
           i = 0
           console.log("Does \""+selectedAns+"\" match up with \""+truths[i]+"\"?");
 
-          if ((selectedAns == truths[i]) && timer > 0 ) {
+          if ((selectedAns == truths[i]) && converted > 0 ) {
             console.log('Yep');
             correctAns();
-          } else if ((selectedAns != truths[i]) && timer > 0 ) {
+            stop();
+          } else if ((selectedAns != truths[i]) && converted > 0 ) {
             console.log('Nope');
             incorrectAns();
-          } else if (timer > -1) {
-            console.log('Out of Time!')
+            stop();
           }
 
         });
+
+        console.log(converted);
+        if (converted == 0) {
+          console.log('Out of Time!')
+          stop();
+        }
+
 
       }
       // End of the all important for loop powering this.

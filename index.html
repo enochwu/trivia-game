@@ -19,12 +19,14 @@
 
   <body>
 
+<div class="wrapper">
+<!-- <img src="assets/images/simpsons.jpg" class="img-responsive" alt="Responsive image"> -->
     <!-- Container div start -->
     <div class="container">
 
         <div class="row" id="customPads">
 
-            <div class="col-xs-12 col-sm-12 col-md-12 img-rounded" id="contentBox">
+            <div class="col-xs-12 col-sm-12 col-md-12 img-rounded contentBox">
               <h1 class="text-center">Simpsons Trivia</h1>
 
               <div class="row">
@@ -54,9 +56,9 @@
 
               </div>
               <!-- End of nested row div -->
-              
-              <div class="col-xs-12 col-sm-12 col-md-12" id="contentBox">
-                  <h3 class="text-center" id="counter">Time: 30 seconds</h3>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 contentBox" id="timeLeft">
+                    <!-- Countdown will dynamically show up here from JS. -->
               </div>
 
             </div>
@@ -67,6 +69,8 @@
 
     </div>
     <!-- Container div end -->
+</div>
+<!-- Wrapper div end -->
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

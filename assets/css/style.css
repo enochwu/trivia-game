@@ -1,9 +1,30 @@
-#contentBox {
-  background-color: #C0C0C0;
+body {
+  background-color: transparent;
 }
 
+.contentBox {
+  background-color: black;
+  margin-bottom: 20px;
+  background: rgba(200, 104, 84, 0.85);
+}
+
+html {
+background: url("../images/simpsons.jpg") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+/*.wrapper{
+  background-image: url('/assets/images/simpsons.jpg') no-repeat  center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
 #customPads{
-  padding-top: 10%;
+  padding-top: 22%;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -16,16 +37,25 @@ button {
   margin-top: 30px;
 }
 
+h1 {
+  font-size: 55px;
+  color: white;
+}
+
 h2 {
   margin-top: 45px;
+  color: white;
 }
 
 @media(max-width:767px){
   h2 {
-    margin-top: 10px;
+    margin-top: 20px;
   }
   #answers {
     margin-top: 10px;
+  }
+  .contentBox {
+    margin-bottom: 10px;
   }
 }
 @media(min-width:768px){
